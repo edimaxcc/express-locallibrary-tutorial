@@ -82,7 +82,7 @@ function onError(error) {
  */
 
 function onListening() {
-  let addr = server.address('192.168.0.107');
+  let addr = server.address('127.0.0.1');
   let bind = typeof addr === 'string'
     ? 'pipe ' + addr
     : 'port ' + addr.port;
