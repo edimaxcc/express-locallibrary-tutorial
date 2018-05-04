@@ -40,3 +40,9 @@ express-validation que es un middleware que valida el cuerpo, params, query, hea
 > Boostrap
 
 Bootstrap es un framework desarrollado y liberado por Twitter que tiene como objetivo facilitar el diseño web. Permite crear de forma sencilla webs de diseño adaptable, es decir, que se ajusten a cualquier dispositivo y tamaño de pantalla y siempre se vean igual de bien. Es Open Source o código abierto, por lo que lo podemos usar de forma gratuita y sin restricciones.
+
+### Como utilizar esta aplicación?
+
+como ustedes pueden ver no he hecho upload la pasta node_modules, que toda via haz necessario para que nostra Aplicación fucione coretamente. para poner todo en ordern abra el command line "cmd" o terminal  y en el directorio de la aplicación entre con el comando.
+
+> npm install  
