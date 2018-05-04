@@ -165,3 +165,9 @@ body {
 /* #btn_cancel{
   margin-left: 202px;
 }*/
+/* ------------------------Page Delete Genre--------------------------------------------------- */
+
+#genre_books {
+  border: 5px solid #fdfbfb;
+  background: #fdfbfb;
+}
