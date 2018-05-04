@@ -1,0 +1,38 @@
+extends layout
+
+block content
+  // This container contain data info from an Author
+  .container#author
+    .row
+      .col-sm-2.col-md-12.col-lg-6.col-lg-offset-6#author_bio
+        img.img-circle(src='/images/Isaac.jpeg' alt='Cinque Terre' width="94" height="76")
+    
+        h1#author_name Author: #{author.name}
+        p #{author.date_of_birth_formatted} - #{author.date_of_death_formatted}
+    hr
+  // This container hold the title Books    
+  .container  
+    h4 Books
+    dl
+  // This container contain an list of books   
+  .container
+    .row
+      each book in author_books
+        .col-sm-4.col-md-4.col-lg-4#list_books
+          .thumbnail
+            a(href='/images/test.jpg' target='_blank')
+             img#author_img(src='/images/test.jpg' alt='Lights' class="responsive")
+            .caption
+              a(href=book.url) #{book.title}
+              div.summary_book 
+                p #{book.summary}  
+      else
+       p This author has no books.
+  
+  // This container hold the buttons delete and update
+  .container
+    .row
+      .col-sm-2.col-md-4.col-lg-4
+         a.btn.btn-danger#btn_delete(href= author.url+'/delete' role='button') Delete Author
+         a.btn.btn-primary#btn_update(href= author.url+'/update' role='button') Update Author  
+  

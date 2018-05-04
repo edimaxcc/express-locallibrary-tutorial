@@ -1,0 +1,24 @@
+extends layout
+
+block content
+
+  h1= title
+  .container
+    .row
+      .col-xs-12.col-sm-4.col-md-4
+        .table-responsive
+          caption.text-center
+            thead
+              tr
+                th Author Name
+                th Birth Date
+                th Death Date
+                each author in author_list
+                  tr
+                    td 
+                      li
+                        a(href=author.url) #{author.name}
+                    td #{author.date_of_birth_formatted}
+                    td #{author.date_of_death_formatted}
+                else
+                  li there are no author

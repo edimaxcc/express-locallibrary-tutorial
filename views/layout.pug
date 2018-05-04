@@ -1,0 +1,49 @@
+doctype html
+html(lang='en')
+  head
+    title= title
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
+    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
+    link( href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet") 
+    script(src='/javascripts/menu.js')
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    
+      
+  body
+   block sidebar
+     // This header hold an class navbar
+     header#header_menu.header.navbar-fixed-top
+       // This container Hold the menu links, logo, icon-menu
+       .container
+         .col-sm-6.col-md-10.col-lg-10
+           a(href='/')
+             #book_icon.glyphicon.glyphicon-book
+             h1.logo Libre
+         span#btn-menu.glyphicon.glyphicon-align-justify
+         nav#nav.nav.navbar-nav
+           ul#nav_menu.menu
+             li
+               a(href='/catalog') Home
+             li
+               a(href='/catalog/books') All books
+             li
+               a(href='/catalog/authors') All authors
+             li
+               a(href='/catalog/genres') All genres
+             li
+               a(href='/catalog/bookinstances') All book-instances
+             li  
+             li
+               a(href='/catalog/author/create') Create new author
+             li
+               a(href='/catalog/genre/create') Create new genre
+             li
+               a(href='/catalog/book/create') Create new book
+             li
+               a(href='/catalog/bookinstance/create') Create new book instance (copy)
+                         
+
+   block content  

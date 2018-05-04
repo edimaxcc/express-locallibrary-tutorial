@@ -1,0 +1,167 @@
+* {
+  box-sizing: border-box;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+
+}
+
+body {
+  margin: 0;
+  font-family: 'Open Sans', sans-serif;
+  padding-top: 65px;
+  background-color: #ffffff;
+
+}
+
+
+/* ---------------------------------------------------------Header Navbar Style --------------------------------------------------*/
+
+.header {
+  height: 60px;
+  background: #27292f;
+  margin-right: -15px;
+  margin-left: -15px;
+}
+.header .container {
+  display: flex;
+  justify-content: space-between;
+  z-index: 1;
+}
+.logo {
+  margin: 5px;
+  float: left;
+  color: lightgray;
+  margin-top: -35px;
+  margin-left: 24px;
+}
+#book_icon {
+  margin-left: -24px;
+
+}
+.glyphicon {
+  display: block;
+  top: 2px;
+  width: 40px;
+  height: 40px;
+  font-size: 30px;
+  background: #2b2929;
+  color: #f7f7f7;
+  text-align: center;
+  line-height: 45px;
+  border-radius: 5px;
+  margin-left: 136px;
+  cursor: pointer;
+}
+
+.nav {
+  position: absolute;
+  top: 60px;
+  left: -105%;
+  width: 100%;
+  transition: all 0.4s;
+
+}
+
+/* This add new attributs to navbar */
+.show {
+  left: 0;
+}
+
+.menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li a {
+  display: block;
+  padding: 12px;
+  background: #eee;;
+  text-decoration: none;
+  margin-left: 27px;
+
+}
+
+.menu li a:hover {
+  background: #6495ED;
+  color: white;
+}
+
+
+
+
+/* ------------------------Page Author Details--------------------------------------------------- */
+
+/* Add new font family from google */
+.caption p{
+   font-family: 'Poiret One', cursive;
+   font-size: 16px;
+}
+
+
+/* Setup the image size */
+#author_img{
+  height: 382px;
+  width: 353px;
+}
+/* Setup the Author bio background color */
+#author{
+  background: #31708f;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+#author_select {
+  background: #eff3f5;
+}
+
+/* Setup the Author image position */
+.img-circle {
+    border-radius: 50%;
+    float: right;
+    margin-top: 4px;
+}
+/* Setup the Author name position */
+#author_name{
+  font-size: 15px;
+  text-align: left;
+  color: #FFF;
+}
+
+#author_bio p{
+  position: relative;
+  color: #FFF;
+}
+/* List Books with effects */
+
+.thumbnail {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+#list_books {
+  perspective: 1300px;
+}
+
+#list_books a {
+  transform-style: preserve-3d;
+}
+
+#list_books a.animate {
+  transform: translateZ(400px) translateY(300px) rotateX(-90deg);
+  animation: fallPerspective .8s ease-in-out forwards;
+}
+
+@keyframes fallPerspective {
+	100% { transform: translateZ(0px) translateY(0px) rotateX(0deg); opacity: 1; }
+}
+
+#btn_update{
+  float: right;
+}
+
+/* ------------------------Page BookInstances Style--------------------------------------------------- */
+
+/* #btn_cancel{
+  margin-left: 202px;
+}*/

@@ -1,0 +1,70 @@
+extends layout
+
+block content
+  .container
+    .jumbotron
+      h1.display-4 Hola, Usuario!
+      p.lead
+        | ¡Esta es una aplicación simple, pero contiene un montón de lógica!
+      hr.my-4
+      p
+        | Hola bienvenido a mi repository. está es mi primer aplicación web utilizando node.js junto con Express. 
+        | aunque no es una aplicación de grande porte pero ya es possible hacer mucha cosas com está grande herraminta.
+      a.btn.btn-primary.btn-lg(href='https://github.com/edimaxcc/express-locallibrary-tutorial.git', role='button') source code
+
+  .container
+    .jumbotron.jumbotron-fluid
+      .container
+        h1.display-4 What is Library?
+        p.lead
+          | Libre de biblioteca mi primer sitio web con Nodejs y express La aplicación de la biblioteca está diseñada para crear y mantener la colección de libros.
+          | El usuario puede crear libros, autores, bookinstances y género. 
+          | el usuario administrador puede administrar la copia de libros y las copias geográficas de ubicación, puede cambiar el estado si el 
+          | libro está en Mantenimiento, Disponible o alquilado.
+              
+
+    h1 Dynamic content
+    
+    if error
+      p Error getting dinamic content
+    else
+      p The Library has the following record counts:
+      
+  .container
+    .row
+      .col-md-4.order-md-2.mb-4
+        .list-group.mb-3
+          .list-group-item.d-flex.justify-content-between.lh-condensed
+            div
+              h6.my-0 Books
+              small.text-muted The Library has
+            span.text-muted !{data.book_count} books            
+      .col-md-4.order-md-2.mb-4
+        .list-group.mb-3
+          .list-group-item.d-flex.justify-content-between.lh-condensed
+            div
+              h6.my-0 Copies
+              small.text-muted The Library has
+            span.text-muted !{data.book_count} copies
+      .col-md-4.order-md-2.mb-4
+        .list-group.mb-3
+          .list-group-item.d-flex.justify-content-between.lh-condensed
+            div
+              h6.my-0 Copies Available
+              small.text-muted The Library has
+            span.text-muted !{data.book_count} copies available   
+      .col-md-4.order-md-2.mb-4
+        .list-group.mb-3
+          .list-group-item.d-flex.justify-content-between.lh-condensed
+            div
+              h6.my-0 Authors
+              small.text-muted The Library has
+            span.text-muted !{data.book_count} authors
+      .col-md-4.order-md-2.mb-4
+        .list-group.mb-3
+          .list-group-item.d-flex.justify-content-between.lh-condensed
+            div
+              h6.my-0 Genres
+              small.text-muted The Library has
+            span.text-muted !{data.book_count} genres         
+        

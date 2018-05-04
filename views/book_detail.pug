@@ -1,0 +1,43 @@
+extends layout
+
+block content
+  .container
+     h1 #{title}: #{book.title}
+    
+     p #[strong Author:] 
+      a(href=book.author.url) #{book.author.name}
+     p #[strong Summary:] #{book.summary}
+     p #[strong ISBN:] #{book.isbn}
+     p #[strong Genre:] 
+       each val in book.genre
+         a(href=val.url) #{val.name}
+         |, 
+    
+     div(style='margin-left:20px;margin-top:20px')
+       h4 Copies
+      
+       each val in book_instances
+         hr
+         if val.status=='Available'
+           p.text-success #{val.status}
+         else if val.status=='Maintenance'
+           p.text-danger #{val.status}
+         else
+           p.text-warning #{val.status} 
+           p #[strong Imprint:] #{val.imprint}
+         if val.status!='Available'
+           p #[strong Due back:] #{val.due_back_formatted}
+           p #[strong Id:] 
+           a(href=val.url) #{val._id}
+   
+       else
+         p There are no copies of this book in the library.
+        
+     hr
+     // This container hold the buttons delete and update
+     .container
+        .row
+           .col-sm-2.col-md-4.col-lg-4
+              a.btn.btn-danger#btn_delete(href= book.url+'/delete' role='button') Delete Book
+              a.btn.btn-primary#btn_update(href= book.url+'/update' role='button') Update Book
+   

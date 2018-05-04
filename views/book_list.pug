@@ -1,0 +1,21 @@
+extends layout
+
+block content
+  h1= title
+  .container
+    .row
+      .col-xs-12.col-sm-12.col-md-12.col-lg-12
+        table.table.table-bordered.table-hover
+          thead
+            tr
+              th  Book Title
+              th  Author Name
+          tbody
+           each book in book_list
+             tr
+               td
+                 li
+                   a(href=book.url) #{book.title}
+               td #{book.author.name}          
+           else
+             li there are no books      
