@@ -3,7 +3,10 @@ extends layout
 block content
   .container
     .jumbotron
-      h1.display-4 Hola, Usuario!
+      h1.display-4 Hola, Usuario! 
+      if user 
+        h1  #{user.username}
+      
       p.lead
         | ¡Esta es una aplicación simple, pero contiene un montón de lógica!
       hr.my-4

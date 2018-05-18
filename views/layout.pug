@@ -1,49 +1,83 @@
-doctype html
 html(lang='en')
   head
-    title= title
+    // Required meta tags
     meta(charset='utf-8')
-    meta(name='viewport', content='width=device-width, initial-scale=1')
-    link(rel='stylesheet', href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css')
-    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js')
-    script(src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js')
-    link( href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet") 
-    script(src='/javascripts/menu.js')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    // Bootstrap CSS
+    link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css', integrity='sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4', crossorigin='anonymous')
     link(rel='stylesheet', href='/stylesheets/style.css')
-    
-      
-  body
-   block sidebar
-     // This header hold an class navbar
-     header#header_menu.header.navbar-fixed-top
-       // This container Hold the menu links, logo, icon-menu
-       .container
-         .col-sm-6.col-md-10.col-lg-10
-           a(href='/')
-             #book_icon.glyphicon.glyphicon-book
-             h1.logo Libre
-         span#btn-menu.glyphicon.glyphicon-align-justify
-         nav#nav.nav.navbar-nav
-           ul#nav_menu.menu
-             li
-               a(href='/catalog') Home
-             li
-               a(href='/catalog/books') All books
-             li
-               a(href='/catalog/authors') All authors
-             li
-               a(href='/catalog/genres') All genres
-             li
-               a(href='/catalog/bookinstances') All book-instances
-             li  
-             li
-               a(href='/catalog/author/create') Create new author
-             li
-               a(href='/catalog/genre/create') Create new genre
-             li
-               a(href='/catalog/book/create') Create new book
-             li
-               a(href='/catalog/bookinstance/create') Create new book instance (copy)
-                         
+    title Authentication Page
 
-   block content  
+
+  body
+    block navbar
+      .container
+        .row
+          .col-sm-4.col-md-4.col-lg-12
+            // Nav tabs
+            nav.navbar.navbar-expand-lg.navbar-light.bg-light.fixed-top
+              a.navbar-brand(href='/catalog/')
+               img.navbar-brand(src='https://image.flaticon.com/icons/svg/88/88179.svg', alt='Local Library')    
+              button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+              #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                  li.nav-item.active
+                    if user
+                      li.nav-item
+                        a.nav-link(href='/catalog/')  Dashboard 
+                      li.nav-item
+                        a.nav-link(href='/catalog/books') Books
+                      li.nav-item
+                        a.nav-link(href='/catalog/genres') Genres                                            
+                      li.nav-item
+                        a.nav-link(href='/catalog/authors') Authors                                            
+                      li.nav-item
+                        a.nav-link(href='/catalog/bookinstances') Book-Instances  
+                      li.nav-item
+                        a.nav-link(href='/users/logout')  Logout |#[strong user: ] #{user.username}
+                    else
+    
+                      a.nav-link(href='/users/login')
+                        | Login 
+                        span.sr-only (current)
+                      li.nav-item
+                        a.nav-link(href='/users/register') Register
+                  
+
+    block content
+
+
+
+
+
+    block footer
+       .footer
+          .social-area
+             ul
+               li
+                 a.shr-btn-facebook(href='#', target='_blank', title='Join us on Facebook')
+                   span Facebook
+                    i.fab.fa-facebook-f
+               li
+                 a.shr-btn-instagram(href='#', target='_blank', title='Join us on Instagram')
+                   span Instagram
+                   i.fab.fa-instagram
+               li
+                 a.shr-btn-behance(href='#', target='_blank', title='Join us on Twitter')
+                    span twitter
+                    i.fab.fa-twitter
+               li
+                 a.shr-btn-soundcloud(href='https://github.com/edimaxcc/express-locallibrary-tutorial', target='_blank', title='Join us on Github')
+                   span Github
+                   i.fab.fa-github
+          .credits
+             span.footer-white ©2018  Local Library
+             img.slice-footer(src='https://image.flaticon.com/icons/svg/88/88179.svg', alt='Local Library')
+
+              
+    block scripts
+      script(src='https://code.jquery.com/jquery-3.3.1.slim.min.js', integrity='sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo', crossorigin='anonymous')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js', integrity='sha384-cs/chFZiN24E4KMATLdqdvsezGxaGsi4hLGOzlXwp5UZB1LY//20VyM2taTB4QvJ', crossorigin='anonymous')
+      script(src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js', integrity='sha384-uefMccjFJAIv6A+rW+L4AHf99KvxDjWSu1z9VI8SKNVmz4sk7buKt/6v9KI65qnm', crossorigin='anonymous')
+      link(rel='stylesheet', href='https://use.fontawesome.com/releases/v5.0.13/css/all.css', integrity='sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp', crossorigin='anonymous')

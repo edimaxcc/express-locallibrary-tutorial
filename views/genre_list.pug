@@ -1,12 +1,17 @@
 extends layout
 
 block content
-  h1= title
-  
-  ul
-    each genre in genre_list
-      li
-        a(href=genre.url) #{genre.name}
+  .container
+     h1= title
+     ul
+     each genre in genre_list
+       li
+         a(href=genre.url) #{genre.name}
+     else
+       li there are no author
+  br
 
-    else
-      li there are no author
+  .container#cont_genre_list
+    br  
+    br
+    br  

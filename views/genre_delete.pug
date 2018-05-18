@@ -8,28 +8,26 @@ block content
       
      hr
     
+  .container
      if genre_books.length
        .alert.alert-danger(role='alert')
           | Delete the following Books before attempting to delete this Genre!    
-      
-       div(style='margin-left:20px;margin-top:20px')
-         h4 Books
-         dl
-         
-         each book in genre_books
-           hr
-           .card#genre_books  
-              .card-body           
-                 a.h5.card-title(href=book.url) #{book.title}
-                 h6.card-subtitle.mb-2.text-muted summary
-                 p.card-text
-                   | #{book.summary}
-                 h6.card-subtitle.mb-2.text-muted ISBN     
-                 a.card-link(href=book.url) #{book.isbn}
+       h4 Books
+       dl
+       
+       each book in genre_books
+         hr
+         .card#genre_books  
+            .card-body           
+               a.h5.card-title(href=book.url) #{book.title}
+               h6.card-subtitle.mb-2.text-muted summary
+               p.card-text
+                 | #{book.summary}
+               h6.card-subtitle.mb-2.text-muted ISBN     
+               a.card-link(href=book.url) #{book.isbn}
      else
        .alert.alert-danger(role='alert')        
           | Do you really want to delete this Genre?
-
        .container
           form(method='POST' action='')
             div.form-group
