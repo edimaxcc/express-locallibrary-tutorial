@@ -1,0 +1,28 @@
+extends layout
+
+block content
+
+  //  you can substitue the span of reauth email for a input with the email and
+    include the remember me checkbox
+  .container-fluid#login_form
+    br
+    .card.card-container
+      // <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" />
+      img#profile-img.profile-img-card(src='//ssl.gstatic.com/accounts/ui/avatar_2x.png')
+      p#profile-name.profile-name-card
+      form.form-signin(method='post', action='/users/login')
+        span#reauth-email.reauth-email
+        input#inputEmail.form-control(type='name', placeholder='User Name', required='', name='username', autofocus='')
+        input#inputPassword.form-control(type='password', placeholder='Password', name='password', required='')
+        #remember.checkbox
+          label
+            input(type='checkbox', value='remember-me')
+            |  Remember me
+        button#btn-login.btn.btn-lg.btn-primary.btn-block.btn-signin(type='submit') Sign in
+      // /form
+      a.forgot-password(href='/users/register')
+        | Or Register!
+    // /card-container
+  // /container
+
+  .container#cont_login
